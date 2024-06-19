@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living room</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .section {
+      text-align: center; /* Center align content */
+      padding: 40px;
+    }
+
+    .section-title {
+      font-size: 64px; /* Increase font size for the title */
+      font-weight: bold; /* Add bold style */
+      color: #ffffff; /* Add custom color */
+      text-transform: uppercase; /* Convert title to uppercase */
+      letter-spacing: 4px; /* Add letter spacing for a stylish look */
+      margin-bottom: 100px;
+        background-color: #ff5733;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .exterior-image {
+      width: 500px; /* Adjust the width to make images larger */
+      max-height: 400px; /* Adjust the max-height to control image height */
+      margin: 5px;
+      cursor: pointer; /* Add cursor pointer for clickable effect */
+    }
+
+    /* Styles for the fullscreen image overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(212, 212, 212, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .fullscreen-image {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h1 class="section-title">Living room Gallery</h1>
+    <div class="image-container">
+        <img src="470609160.jpg" alt="Exterior Image 1" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609187.jpg" alt="Exterior Image 2" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609193.jpg" alt="Exterior Image 1" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609195.jpg" alt="Exterior Image 2" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609198.jpg" alt="Exterior Image 1" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609204.jpg" alt="Exterior Image 2" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609205.jpg" alt="Exterior Image 2" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609206.jpg" alt="Exterior Image 1" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609219.jpg" alt="Exterior Image 2" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609233.jpg" alt="Exterior Image 1" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609239.jpg" alt="Exterior Image 1" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        <img src="470609249.jpg" alt="Exterior Image 2" class="exterior-image" onclick="openFullscreenImage(this.src)">
+        
+    </div>
+  </div>
+
+  <!-- Fullscreen image overlay -->
+  <div class="overlay" onclick="closeFullscreenImage()">
+    <img src="" alt="Fullscreen Image" class="fullscreen-image" id="fullscreenImage">
+  </div>
+
+  <script>
+    function openFullscreenImage(imageSrc) {
+      const fullscreenImage = document.getElementById('fullscreenImage');
+      fullscreenImage.src = imageSrc;
+      const overlay = document.querySelector('.overlay');
+      overlay.style.display = 'flex';
+    }
+
+    function closeFullscreenImage() {
+      const overlay = document.querySelector('.overlay');
+      overlay.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
